@@ -6,7 +6,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -61,6 +61,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Жидкое стекло и голографические цвета
+				glass: {
+					blue: '#00D4FF',
+					pink: '#FF6B9D',
+					purple: '#8B5CF6',
+					white: 'rgba(255, 255, 255, 0.1)',
+					border: 'rgba(255, 255, 255, 0.2)'
+				},
+				pearl: {
+					pink: '#F8FAFC',
+					blue: '#F1F5F9',
+					purple: '#F3F4F6'
 				}
 			},
 			borderRadius: {
@@ -84,12 +97,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				},
+				'glow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 2s infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backdropBlur: {
+				xs: '2px'
 			}
+		}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
