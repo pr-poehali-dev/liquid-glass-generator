@@ -122,7 +122,6 @@ export default {
 				xs: '2px'
 			}
 		}
-		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
